@@ -1,0 +1,25 @@
+{
+    "exchanges": [
+      "bitstamp",
+      "binance",
+      "kraken"
+    ],
+    "symbols": [
+      "ETHUSD"
+    ],
+    "output_file_path": "/Users/ethanchan/Downloads/bid_ask.csv",
+    "endpoints": {
+      "bitstamp": "wss://ws.bitstamp.net",
+      "binance": "wss://stream.binance.us:9443/ws",
+      "kraken": "wss://ws.kraken.com/"
+    },
+    "subscribe_messages": {
+      "bitstamp": {"event": "bts:subscribe", "data": {"channel": "order_book_ethusd"}},
+      "binance": {"method": "SUBSCRIBE", "params": ["ethusd@bookTicker"], "id": 1},
+      "kraken": {"event": "subscribe", "subscription": {"name": "spread"}, "pair": ["ETH/USD"]}
+    },
+    "ssl_options": {
+      "cert_reqs": "CERT_NONE"
+    }
+  }
+  
